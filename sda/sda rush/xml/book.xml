@@ -1,0 +1,14 @@
+<book xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="book_scheme.xsd">
+    
+    <title>A Hitchhikers Guide to the Universe</title>
+    
+    <chapter>
+        <title>Never forget a towel</title>
+        <paragraph>Towels are important because they can dry you.</paragraph>
+    </chapter>
+    
+    <chapter>
+        <title>Seriously, never forget the towel</title>
+        <paragraph>Towlie Towlie Towlie Towlie Towlie </paragraph>
+    </chapter>
+</book>

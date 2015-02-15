@@ -1,0 +1,30 @@
+<data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="customer_scheme.xsd">
+    
+    <customer id="1">
+        <name>Adolf</name>
+    </customer>
+    
+    <customer id="2">
+        <name>Hermann</name>
+    </customer>
+    
+    <customer id="3">
+        <name>Josef</name>
+    </customer>
+    
+    <invoice customerId="1">
+        <amount>100.00</amount>
+        <status>open</status>
+    </invoice>
+    
+    <invoice customerId="2">
+        <amount>123.45</amount>
+        <status>due</status>
+    </invoice>
+    
+    <invoice customerId="3">
+        <amount>666</amount>
+        <status>cleared</status>
+    </invoice>
+
+</data>

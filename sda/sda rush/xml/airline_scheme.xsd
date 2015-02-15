@@ -1,0 +1,166 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" elementFormDefault="qualified"
+    vc:minVersion="1.1">
+    
+    <xs:element name="top">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- Nur die "mutter" elemente (tables) einbinden -->
+                <xs:element ref="airlines"/>
+                <xs:element ref="destinations"/>
+                <xs:element ref="flights"/>
+            </xs:sequence>
+            
+        </xs:complexType>
+    
+        <!-- PK-FK Beziehung herstellen -->
+        
+        <!-- Flug zu Airline -->
+        <xs:keyref name="flight2Airline" refer="PRIMARY_KEY_airlineID">
+            <xs:selector xpath="flights/flight"/>
+            <xs:field xpath="@owningAirline"/>
+        </xs:keyref>
+        
+        <!-- Flug zu origin -->
+        <xs:keyref name="flight2origin" refer="PRIMARY_KEY_airportID">
+            <xs:selector xpath="flights/flight"/>
+            <xs:field xpath="@origin"/>
+        </xs:keyref>
+        
+        <!-- Flug zu destination -->
+        <xs:keyref name="flight2destination" refer="PRIMARY_KEY_airportID">
+            <xs:selector xpath="flights/flight"/>
+            <xs:field xpath="@destination"/>
+        </xs:keyref>
+    </xs:element>
+    
+    
+    <!-- Airlines bestehen aus einzelnen Anbietern. Muss mindestens eine haben, und kann so viele haben wie man will-->
+    <xs:element name="airlines">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="airline" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+        
+        <!-- PKs und Uniques einer Airline -->
+        <xs:key name="PRIMARY_KEY_airlineID">
+            <xs:selector xpath="airlines/airline"/>
+            <xs:field xpath="@airlineID"/>
+        </xs:key>
+        
+        <xs:key name="UNIQUE_airlineName">
+            <xs:selector xpath="airlines/airline"/>
+            <xs:field xpath="@name"/>
+        </xs:key>
+        
+        <xs:key name="UNIQUE_airlineCode">
+            <xs:selector xpath="airlines/airline"/>
+            <xs:field xpath="@airlindeCode"/>
+        </xs:key>
+        
+    </xs:element>
+    
+    <!-- eine Airline besteht aus dem Namen der Airline, der AirlineID, und dem AirlineCode -->
+    <xs:element name="airline">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            </xs:sequence>
+            <xs:attribute name="airlineID" type="xs:int" use="required"/>
+            <xs:attribute name="airlineCode" type="ICAOAirlineCode" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- destinanations ist die Sammlung aller flughäfen -->
+    <xs:element name="destinations">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="airport" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+        
+        <!-- PKs und Uniques eines Flughafens -->
+        <xs:key name="PRIMARY_KEY_airportID">
+            <xs:selector xpath="airports/airport"/>
+            <xs:field xpath="@airportID"/>
+        </xs:key>
+        
+        <xs:key name="UNIQUE_airportName">
+            <xs:selector xpath="airports/airport"/>
+            <xs:field xpath="@name"/>
+        </xs:key>
+        
+        <xs:key name="UNIQUE_airportCode">
+            <xs:selector xpath="airports/airport"/>
+            <xs:field xpath="@airportCode"/>
+        </xs:key>
+    </xs:element>
+
+    <!-- ein einzelner Flughafen mit vollen Namen, airportCode und airportID -->
+    <xs:element name="airport">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="fullName" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            </xs:sequence>
+            <xs:attribute name="airportID" type="xs:int" use="required"/>
+            <xs:attribute name="airportCode" type="ICAOAirportCode" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- flights ist die Sammlung aller Flüge -->
+    <xs:element name="flights">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="flight" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+        <!-- PKs und Uniques eines Fluges -->
+        <xs:key name="PRIMARY_KEY_flightID">
+            <xs:selector xpath="flights/flight"/>
+            <xs:field xpath="@flightID"/>
+        </xs:key>
+        
+        <xs:key name="UNIQUE_flightNumber">
+            <xs:selector xpath="flights/flight"/>
+            <xs:field xpath="@name"/>
+        </xs:key>
+    </xs:element>
+    
+    <!-- ein einzelner Flug, mit flightID, owningAirline, origin & destination -->
+    <xs:element name="flight">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="flightNumber" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            </xs:sequence>
+            <xs:attribute name="flightID" type="xs:int" use="required"/>
+            <xs:attribute name="owningAirline" type="xs:int" use="required"/>
+            <xs:attribute name="origin" type="xs:int" use="required"/>
+            <xs:attribute name="destination" type="xs:int" use="required"/>
+            <!-- überprüfe, ob origin != destination -->
+            <xs:assert test="not(@origin = @destination)">
+                <xs:annotation>
+                    <xs:documentation>Constraint verletzt du Seggel!</xs:documentation>
+                </xs:annotation>
+            </xs:assert>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Constraints -->
+    
+    <!-- ICAO airlineCode -->
+    <xs:simpleType name="ICAOAirlineCode">
+        <xs:restriction base="xs:string">
+            <xs:length value="3"/>
+            <xs:pattern value="[A-Z]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- ICAO airportCode -->
+    <xs:simpleType name="ICAOAirportCode">
+        <xs:restriction base="xs:string">
+            <xs:length value="4"/>
+            <xs:pattern value="[A-Z09]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+</xs:schema>

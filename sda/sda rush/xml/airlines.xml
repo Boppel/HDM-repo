@@ -1,0 +1,60 @@
+<top xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="airline_scheme.xsd">
+    
+    
+    <!--
+    <airlines>
+        <airline airlineCode="DLH" airlineID="1">
+            <name>Lufthansa</name>
+        </airline>
+        <airline airlineCode="AFR" airlineID="2">
+            <name>Air France</name>
+        </airline>
+    </airlines>
+    
+    
+    <destinations>
+        <airport airportID="1" airportCode="EDDF">
+            <fullName>Frankfurt International Airport – Frankfurt am Main</fullName>
+        </airport>
+        
+        <airport  airportID="3" airportCode="EBCI">
+            <fullName>Brussels South Charleroi Airport – Charleroi</fullName>
+        </airport>
+    </destinations>
+    
+    <flights>
+        <flight flightID="1" owningAirline="2" origin="1" destination="3">
+            <flightNumber>LH 4234</flightNumber>
+        </flight>
+    </flights>
+    
+    -->
+    
+    <airlines>
+        <airline airlineID="1" airlineCode="ABC">
+            <name>erste Airline</name>
+        </airline>
+        <airline airlineID="2" airlineCode="DEF">
+            <name>zweite Airline</name>
+        </airline>
+        <airline airlineID="1" airlineCode="ABC">
+            <name>GJGJGJ</name>
+        </airline>
+    </airlines>
+    
+    <destinations>
+        <airport airportID="1" airportCode="ABCD">
+            <fullName>erster Flughafen</fullName>
+        </airport>
+        <airport airportID="2" airportCode="EFGH">
+            <fullName>zweiter Flughafen</fullName>
+        </airport>
+    </destinations>
+    
+    <flights>
+        <flight flightID="1" owningAirline="1" origin="1" destination="2">
+            <flightNumber>ABCD</flightNumber>
+        </flight>
+    </flights>
+    
+</top>

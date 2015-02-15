@@ -1,0 +1,10 @@
+<memo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="memo_scheme.xsd" 
+    date="2014-09-24" priority="high">
+    
+    <sender>Felix</sender>
+    <recipant>Martin</recipant>
+    <subject>Hallo!</subject>
+    <content>Dein Skript ist echt scheisse!</content>
+    
+</memo>
