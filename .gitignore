@@ -92,3 +92,17 @@ mobile_web_dev/.idea/modules.xml
 mobile_web_dev/.idea/vcs.xml
 mobile_web_dev/.idea/workspace.xml
 mobile_web_dev/.idea/scopes/scope_settings.xml
+*.json
+*.fdt
+*.fdx
+*.fnm
+*.frq
+*.nrm
+*.prx
+*.tii
+*.tis
+*.gen
+*.repositories
+*.zip
+*.properties
+sda/.recommenders/index/http___download_eclipse_org_recommenders_models_luna_/segments_5
