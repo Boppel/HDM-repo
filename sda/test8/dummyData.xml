@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addressbook xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="schema.xsd">
+    
+    <Person id="1">
+        <fullName>Ole Queck</fullName>
+        <birth>2000-09-05</birth>
+        <category>colleague</category>
+        <Address>
+            <street>Hassstrasse</street>
+            <number>23a</number>
+            <town>Crailsheim</town>
+            <zip>DE74599</zip>
+     </Address>
+    </Person>
+    
+    <Person id="2">
+        <fullName>Ole Queck</fullName>
+        <birth>2000-09-05</birth>
+        <category>colleague</category>
+        <Address>
+            <street>Hassstrasse</street>
+            <number>23a</number>
+            <town>Crailsheim</town>
+            <zip>DE74599</zip>
+        </Address>
+    </Person>
+</addressbook>

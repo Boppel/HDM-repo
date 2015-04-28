@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    
+    <xs:element name="addressbook">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Person" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+        
+        <xs:key name="PK_Person">
+            <xs:selector xpath="Person"></xs:selector>
+            <xs:field xpath="@id"></xs:field>
+        </xs:key>
+        
+    </xs:element>
+    
+    <xs:element name="Person">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="fullName" type="xs:string"/>
+                <xs:element name="birth" type="xs:date" minOccurs="0"/>
+                <xs:element name="category" type="Category" minOccurs="0"/>
+                <xs:element name="Address" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="street" type="xs:string"/>
+                            <xs:element name="number" type="xs:string"/>
+                            <xs:element name="town" type="xs:string"/>
+                            <xs:element name="zip">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:length value="7"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="id" use="required" type="xs:int"/>
+        </xs:complexType>
+    </xs:element>
+    
+    
+    <xs:simpleType name="Category">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="friend"/>
+            <xs:enumeration value="customer"/>
+            <xs:enumeration value="colleague"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+</xs:schema>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persons 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="person.xsd">
+    
+    <person id="23">
+        <firstName>Sue</firstName>
+        <lastName>White</lastName>
+        <phone>322-33434</phone>
+    </person>    
+
+    <person id="27">
+        <firstName>Sue</firstName>
+        <lastName>White</lastName>
+        <phone>323-433453</phone>
+        <email>white@lispy.com</email>
+    </person>
+    
+    <person>
+        <firstName>James</firstName>
+        <lastName>Brown</lastName>
+    </person>
+    
+    <person id="30"> 
+        <firstName>Linda</firstName>
+        <lastName>Dempsey</lastName>
+    </person>
+    
+</persons>

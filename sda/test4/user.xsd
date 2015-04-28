@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    
+    
+    <xs:element name="users">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="user" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="user">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="uid"/>
+                <xs:element name="fullName"/>
+                <xs:element ref="contact"/>
+            </xs:sequence>
+            <xs:attribute name="index" type="xs:int"/>
+            <xs:attribute name="uid" type="xs:NMTOKEN"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:simpleType name="contactType">
+        <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="email"/>
+            <xs:enumeration value="phone"/>
+            <xs:enumeration value="none"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:element name="contact">
+        <xs:complexType mixed="true">
+            <xs:attribute name="type" type="contactType"/>
+        </xs:complexType>
+    </xs:element>
+    
+</xs:schema>

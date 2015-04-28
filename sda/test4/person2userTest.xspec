@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<x:description xmlns:x="http://www.jenitennison.com/xslt/xspec" stylesheet="person2user.xsl">
+    
+    <x:scenario label="'person' entry having no contact information">
+        <x:context>
+            <person id="7">
+                <firstName>Jim</firstName>
+                <lastName>Bone</lastName>
+            </person>
+        </x:context>
+        
+        <x:expect label="'user' entry having no contact information">
+            <user index="1" uid="user_7">
+                <uid>Bone</uid>
+                <fullName>Jim Bone</fullName>
+                <contact type="none"/>
+            </user>
+        </x:expect>
+        
+    </x:scenario>
+    
+    <x:scenario label="'person' entry having only 'email'">
+        
+        <x:context>
+            <person id="7">
+                <firstName>Jim</firstName>
+                <lastName>Bone</lastName>
+                <email>bone@lispy.com</email>
+            </person>
+        </x:context>
+        
+        <x:expect label="'user' entry having only email contact information">
+            <user index="1" uid="user_7">
+                <uid>Bone</uid>
+                <fullName>Jim Bone</fullName>
+                <contact type="email">bone@lispy.com</contact>
+            </user>
+        </x:expect>
+        
+    </x:scenario>
+    
+    <x:scenario label="'person' entry having only 'phone'">
+        <x:context select="person">
+            <person id="7">
+                <firstName>Jim</firstName>
+                <lastName>Bone</lastName>
+                <phone>323-433453</phone>
+            </person>
+        </x:context>
+        
+        <x:expect label="'user' entry having phone contact information">
+            <user index="1" uid="user_7">
+                <uid>Bone</uid>
+                <fullName>Jim Bone</fullName>
+                <contact type="phone">323-433453</contact>
+            </user>
+        </x:expect>
+        
+    </x:scenario>
+    
+    <x:scenario label="'person' entry having 'email' and 'phone'">
+        <x:context select="person">
+            <person id="7">
+                <firstName>Jim</firstName>
+                <lastName>Bone</lastName>
+                <phone>323-433453</phone>
+                <email>bone@lispy.com</email>
+            </person>
+        </x:context>
+        
+        <x:expect label="'user' entry having email contact information">
+            <user index="1" uid="user_7">
+                <uid>Bone</uid>
+                <fullName>Jim Bone</fullName>
+                <contact type="email">bone@lispy.com</contact>
+            </user>
+        </x:expect>
+        
+    </x:scenario>
+    
+    <x:scenario label="One 'person' entry having no id">
+        <x:context >
+            <persons 
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:noNamespaceSchemaLocation="person.xsd">
+                <person>
+                    <firstName>Jim</firstName>
+                    <lastName>Bone</lastName>
+                </person>
+            </persons>
+        </x:context>
+        
+        <x:expect label="No 'user' entry at all">
+            <users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:noNamespaceSchemaLocation="user.xsd"/>
+        </x:expect>
+        
+    </x:scenario>
+    
+    <x:scenario label="One 'person' entry having an id">
+        <x:context >
+            <persons 
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:noNamespaceSchemaLocation="person.xsd">
+                <person id='9'>
+                    <firstName>Jim</firstName>
+                    <lastName>Bone</lastName>
+                </person>
+            </persons>
+        </x:context>
+        
+        <x:expect label="No 'user' entry at all">
+            <users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:noNamespaceSchemaLocation="user.xsd">
+                <user index="1" uid="user_9">
+                    <uid>Bone</uid>
+                    <fullName>Jim Bone</fullName>
+                    <contact type="none"/>
+                </user>
+            </users>
+        </x:expect>
+        
+    </x:scenario>
+    
+    <x:scenario label="Three 'person' entries, two having an id">
+        <x:context >
+            <persons 
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:noNamespaceSchemaLocation="person.xsd">
+                <person id='9'>
+                    <firstName>Jim</firstName>
+                    <lastName>Bone</lastName>
+                </person>
+                <person>
+                    <firstName>Sally</firstName>
+                    <lastName>Jones</lastName>
+                </person>
+                <person id='7'>
+                    <firstName>Linda</firstName>
+                    <lastName>Evans</lastName>
+                </person>
+            </persons>
+        </x:context>
+        
+        <x:expect label="Two 'user' entries (one gets filtered)">
+            <users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:noNamespaceSchemaLocation="user.xsd">
+                <user index="1" uid="user_9">
+                    <uid>Bone</uid>
+                    <fullName>Jim Bone</fullName>
+                    <contact type="none"/>
+                </user>
+                <user index="2" uid="user_7">
+                    <uid>Evans</uid>
+                    <fullName>Linda Evans</fullName>
+                    <contact type="none"/>
+                </user>
+            </users>
+        </x:expect>
+        
+    </x:scenario>
+    
+    
+    
+</x:description>

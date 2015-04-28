@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<users 
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:noNamespaceSchemaLocation="user.xsd">
+   <user index="1" uid="user_23">
+      <uid>White</uid>
+      <fullName>Sue White</fullName>
+      <contact type="phone">322-33434</contact>
+   </user>
+   <user index="2" uid="user_27">
+      <uid>White</uid>
+      <fullName>Sue White</fullName>
+      <contact type="email">white@lispy.com</contact>
+   </user>
+   <user index="3" uid="user_30">
+      <uid>Dempsey</uid>
+      <fullName>Linda Dempsey</fullName>
+      <contact type="none"/>
+   </user>
+</users>

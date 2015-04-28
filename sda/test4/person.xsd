@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" elementFormDefault="qualified"
+    vc:minVersion="1.1">
+    
+    
+    <xs:element name="persons">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="person" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    
+    <xs:element name="person">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="firstName"/>
+                <xs:element name="lastName"/>
+                <xs:element name="phone" minOccurs="0"/>
+                <xs:element name="email" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:int" use="optional"/>
+        </xs:complexType>
+          
+    </xs:element>
+    
+</xs:schema>

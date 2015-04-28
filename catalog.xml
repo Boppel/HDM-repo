@@ -1,0 +1,37 @@
+<archetype-catalog
+  xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-catalog/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-catalog/1.0.0
+    http://maven.apache.org/xsd/archetype-catalog-1.0.0.xsd">
+
+  <archetypes>
+
+    <archetype>
+      <groupId>de.hdm-stuttgart.mi</groupId>
+      <artifactId>mi-maven-archetype-quickstart</artifactId>
+      <version>1.1</version>
+      <repository>http://maven.mi.hdm-stuttgart.de/Archetypes</repository>
+      <description>Modified from maven-archetype-quickstart using Java 1.8, log4j 2.x and Junit 4.11</description>
+    </archetype>
+
+    <archetype>
+      <groupId>de.hdm-stuttgart.mi</groupId>
+      <artifactId>mi-maven-archetype-javafxml</artifactId>
+      <version>1.0</version>
+      <repository>http://maven.mi.hdm-stuttgart.de/Archetypes</repository>
+      <description>Modified from https://github.com/zonski/javafx-basic-archetype using Java 1.8, log4j 2.x and Junit 4.11</description>
+    </archetype>
+
+
+    <archetype>
+      <groupId>de.hdm-stuttgart.mi</groupId>
+      <artifactId>mi-maven-archetype-sax</artifactId>
+      <version>1.0</version>
+      <repository>http://maven.mi.hdm-stuttgart.de/Archetypes</repository>
+      <description>Sample SAX project using Java 1.8, log4j 2.x and Junit 4.11</description>
+    </archetype>
+
+  </archetypes>
+
+</archetype-catalog>
+
