@@ -28,7 +28,21 @@
      	android:layout_width="wrap_content"
      	android:layout_height="wrap_content"
      	android:text="Arzu anrufen"  
-   />       
+   />  
+   
+   <EditText 
+       android:id="@+id/txt_detail"
+       android:inputType="text"
+       android:layout_height="wrap_content"
+       android:layout_width="fill_parent"
+       android:hint="title of the 2nd activity	"/>
+   
+   <Button
+       android:id="@+id/btn_detail"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="2. Activity starten"
+   />
    
    
 

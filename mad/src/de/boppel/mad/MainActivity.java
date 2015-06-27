@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 
@@ -22,7 +23,9 @@ public class MainActivity extends Activity {
 	
 	// Assignment 2
 	private Button btn_call;
+	private Button btn_detail;
 	private Intent callIntent;
+	private EditText txt_detail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +54,20 @@ public class MainActivity extends Activity {
         btn_call = (Button) findViewById(R.id.btn_call);
         callIntent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:01788720226"));
         btn_call.setOnClickListener(callListener);
+        
+        btn_detail = (Button) findViewById(R.id.btn_detail);
+        final Intent detailIntent = new Intent(this, Detail.class);
+        
+        txt_detail = (EditText) findViewById(R.id.txt_detail);
+        btn_detail.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// wichtig; scope vom onClick beachten!
+		        String userInput = txt_detail.getText().toString();
+		        detailIntent.putExtra("userInput", userInput);
+				startActivity(detailIntent);
+			}
+		});
         // End of Assignment 2
         
     }

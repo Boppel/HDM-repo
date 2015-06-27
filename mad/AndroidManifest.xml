@@ -7,9 +7,8 @@
     <uses-sdk
         android:minSdkVersion="19"
         android:targetSdkVersion="22" />
-    
-    <uses-permission 
-        android:name="android.permission.CALL_PHONE"/>
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -24,6 +23,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".Detail"
+            android:label="@string/title_activity_detail" >
         </activity>
     </application>
 
