@@ -42,5 +42,28 @@
         android:layout_height="wrap_content"
         android:text="starte 2.Activity"
         android:layout_below="@+id/txtData" />
+    
+   	 <EditText 
+   	     android:id="@+id/url"
+   	     android:inputType="text"
+   	     android:layout_width="match_parent"
+   	     android:layout_height="wrap_content"
+   	     android:text="http://"
+   	     android:layout_below="@+id/ActivityButton"/>
+    
+     <Button
+        android:id="@+id/WebviewButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="starte WebView"
+        android:layout_below="@+id/url" />
+
+    <Button
+        android:id="@+id/startBrowserBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="the internet lol" />
 
 </RelativeLayout>

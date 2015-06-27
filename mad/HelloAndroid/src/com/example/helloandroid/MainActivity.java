@@ -16,8 +16,11 @@ public class MainActivity extends Activity {
 	private Button clickButton;
 	private Button callButton;
 	private Button startActivityButton;
+	private Button startBrowserButton;
+	private Button startWebViewbutton;
 	
 	private EditText txt;
+	private EditText url;
 	private int count = 0;
 
     @Override
@@ -68,6 +71,35 @@ public class MainActivity extends Activity {
 			}
 		});
         
+        // Assignment 3
+        startBrowserButton = (Button) findViewById(R.id.startBrowserBtn);
+        startBrowserButton.setOnClickListener(browserBtnListener);
+        
+        url = (EditText) findViewById(R.id.url);
+        
+        startWebViewbutton = (Button) findViewById(R.id.WebviewButton);
+        startWebViewbutton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent webViewIntent = new Intent(getApplication(), Browser.class);
+				
+				// wenn in url feld nix > url = hdm-stuggi.de, sonst der inhalt
+				CharSequence typedURL = url.getText().toString();
+				if(typedURL.length() > 8) {
+					webViewIntent.putExtra("url", typedURL);
+				} else {
+					webViewIntent.putExtra("url", "http://www.hdm-stuttgart.de");
+				}
+				// funktioniert einwandfrei. javascript s. Browser.java
+				// Webpage not available error wegen fehlender permission im manifest
+				// webpage opens in new browser window
+				// TODO: fix it!
+				startActivity(webViewIntent);
+			}
+		});
+        
         
     }
 
@@ -91,6 +123,15 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
     
-    
    
+   // Assignment 3
+   final OnClickListener browserBtnListener = new OnClickListener() {
+	
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.hdm-stuttgart.de"));
+		startActivity(browserIntent);
+	}
+};
 }

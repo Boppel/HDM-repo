@@ -9,6 +9,7 @@
         android:targetSdkVersion="21" />
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -31,6 +32,10 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.helloandroid.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Browser"
+            android:label="@string/title_activity_browser" >
         </activity>
     </application>
 
