@@ -44,6 +44,19 @@
        android:text="2. Activity starten"
    />
    
+   <Button
+       android:id="@+id/btn_ghettoBrowser"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content" 
+       android:text="open in Chrome"/>
+   
+  	<Button
+  	    android:id="@+id/btn_browser"
+  	    android:layout_width="wrap_content"
+  	    android:layout_height="wrap_content"
+  	    android:text="Ghettobrowser"
+  	/>
+   
    
 
 </LinearLayout>

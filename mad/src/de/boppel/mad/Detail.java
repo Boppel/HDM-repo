@@ -16,8 +16,7 @@ public class Detail extends Activity {
 		setContentView(R.layout.activity_detail);
 		
 		txt_title = (TextView) findViewById(R.id.txt_title);
-		String arg = getIntent().getExtras().getString("userInput");
-		txt_title.setText(arg);
+		txt_title.setText(getIntent().getExtras().getString("userInput"));
 	}
 
 	@Override

@@ -26,6 +26,10 @@ public class MainActivity extends Activity {
 	private Button btn_detail;
 	private Intent callIntent;
 	private EditText txt_detail;
+	
+	// Assignment 3
+	private Button btn_ghettoBrowser;
+	private Button btn_browser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +73,31 @@ public class MainActivity extends Activity {
 			}
 		});
         // End of Assignment 2
+        
+        // Assignment 3
+        btn_browser = (Button) findViewById(R.id.btn_browser);
+        btn_ghettoBrowser = (Button) findViewById(R.id.btn_ghettoBrowser);
+        
+        final Intent browserIntent = new Intent (this, BrowserActivity.class);
+        
+        btn_ghettoBrowser.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent ghettoBrowserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.thecodinglove.com"));
+				startActivity(ghettoBrowserIntent);
+			}
+		});
+        
+        btn_browser.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				startActivity(browserIntent);
+			}
+		});
+        // End of Assignment 3
         
     }
 
