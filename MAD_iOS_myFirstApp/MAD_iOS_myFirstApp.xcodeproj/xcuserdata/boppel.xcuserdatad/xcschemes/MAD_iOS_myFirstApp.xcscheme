@@ -5,6 +5,36 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2D640A361B0A1D2700FB3AF3"
+               BuildableName = "MAD_iOS_myFirstApp.app"
+               BlueprintName = "MAD_iOS_myFirstApp"
+               ReferencedContainer = "container:MAD_iOS_myFirstApp.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2D640A4B1B0A1D2700FB3AF3"
+               BuildableName = "MAD_iOS_myFirstAppTests.xctest"
+               BlueprintName = "MAD_iOS_myFirstAppTests"
+               ReferencedContainer = "container:MAD_iOS_myFirstApp.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -12,7 +42,26 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2D640A4B1B0A1D2700FB3AF3"
+               BuildableName = "MAD_iOS_myFirstAppTests.xctest"
+               BlueprintName = "MAD_iOS_myFirstAppTests"
+               ReferencedContainer = "container:MAD_iOS_myFirstApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "2D640A361B0A1D2700FB3AF3"
+            BuildableName = "MAD_iOS_myFirstApp.app"
+            BlueprintName = "MAD_iOS_myFirstApp"
+            ReferencedContainer = "container:MAD_iOS_myFirstApp.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -23,6 +72,16 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "2D640A361B0A1D2700FB3AF3"
+            BuildableName = "MAD_iOS_myFirstApp.app"
+            BlueprintName = "MAD_iOS_myFirstApp"
+            ReferencedContainer = "container:MAD_iOS_myFirstApp.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -32,6 +91,16 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "2D640A361B0A1D2700FB3AF3"
+            BuildableName = "MAD_iOS_myFirstApp.app"
+            BlueprintName = "MAD_iOS_myFirstApp"
+            ReferencedContainer = "container:MAD_iOS_myFirstApp.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
