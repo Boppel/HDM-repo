@@ -15,6 +15,7 @@ public class BrowserActivity extends Activity {
 	private WebView mWebView;
 	private ProgressBar bar;
 	private boolean doneLoading = false;
+	int debug = 0;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +29,8 @@ public class BrowserActivity extends Activity {
 		
 		mWebView.setWebChromeClient(new WebChromeClient() {
 			public void onProgressChanged(WebView view, int progress) {
-				bar.setMax(100);
 				bar.setProgress(progress);
-				if(progress == 100) {
+				if(progress >= 95) {
 					doneLoading = true;
 				}
 			}
