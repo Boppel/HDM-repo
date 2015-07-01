@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">mad_ServiceExample</string>
+    <string name="waitDesc">gib eine Zahl ein und klick auf den Button!</string>
+    <string name="action_settings">Settings</string>
+    <string name="waitHint">wie viele Sekunden sollen wir warten?</string>
+    <string name="startService">k</string>
+    <string name="service_name">Wait</string>
+
+</resources>
