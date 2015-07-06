@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>3F3B0F3F-E232-4C0B-89F5-B7E55B5F569A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>iOS_Assignment 6</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>121E7BB1A82C8A025BCE579AF1E4F0492C0919A0</key>
+		<string>https://github.com/Boppel/HDM-repo.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Mobile App Development/iOS_Assignment 6.playground</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>121E7BB1A82C8A025BCE579AF1E4F0492C0919A0</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Boppel/HDM-repo.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>121E7BB1A82C8A025BCE579AF1E4F0492C0919A0</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>121E7BB1A82C8A025BCE579AF1E4F0492C0919A0</string>
+			<key>IDESourceControlWCCName</key>
+			<string>HDM-repo</string>
+		</dict>
+	</array>
+</dict>
+</plist>
