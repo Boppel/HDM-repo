@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>EE948542-67C7-4156-976E-0E959321EE43</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>iOS_Assignment 3</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>121E7BB1A82C8A025BCE579AF1E4F0492C0919A0</key>
 		<string>https://github.com/Boppel/HDM-repo.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Mobile App Development/iOS_Assignment 3/iOS_Assignment 3.xcodeproj/project.xcworkspace</string>
+	<string>Mobile App Development/iOS_Assignment 3/iOS_Assignment 3.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>121E7BB1A82C8A025BCE579AF1E4F0492C0919A0</key>
